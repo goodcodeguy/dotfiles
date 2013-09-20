@@ -1,0 +1,5 @@
+#!/usr/bin/env fish
+
+set -l dotfiles_root ('pwd')
+
+ln $dotfiles_root/templates/config.fish ~/.config/fish/config.fish
