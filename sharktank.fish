@@ -10,3 +10,8 @@ end
 for function_path in $fish_path/functions/*
   set fish_function_path $function_path $fish_function_path
 end
+
+# Load Completions
+for complete_path in $fish_path/completions/*
+  set fish_complete_path $complete_path $fish_complete_path
+end
