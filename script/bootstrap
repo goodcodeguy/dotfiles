@@ -1,5 +1,6 @@
 #!/usr/bin/env fish
 
 set -l dotfiles_root ('pwd')
+set -l user_dir ('~')
 
-ln -s $dotfiles_root/templates/config.fish ~/.config/fish/config.fish
+ln -s $dotfiles_root/templates/config.fish $user_dir/.config/fish/config.fish
