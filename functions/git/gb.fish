@@ -1,0 +1,4 @@
+function gb
+  git checkout -b $argv
+  git push --set-upstream origin $argv
+end

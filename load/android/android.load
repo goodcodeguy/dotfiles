@@ -1,0 +1,4 @@
+
+if test -d /usr/local/opt/android-sdk
+  set ANDROID_HOME /usr/local/opt/android-sdk
+end
