@@ -1,6 +1,3 @@
-# Get rid of Greeting
-set fish_greeting "Make beautiful things."
-
 # Load environment scripts
 for load_file in $fish_path/load/*/*.load
 	. $load_file

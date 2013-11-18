@@ -1,5 +1,6 @@
-function fish_right_prompt
+function fish_greeting
   set_color $fish_color_autosuggestion[1]
-  date
+  uname -npsr
+  uptime
   set_color normal
 end
