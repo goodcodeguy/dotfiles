@@ -12,8 +12,8 @@ Super simple installation right now since there isn't a whole lot to deal with.
 
 ## TODOS
 
-- Organize the scripts into categories instead of seperating them by function
-  - Instead of "/load", "/completions", "/functions" do "/environ/git", "/environ/sublime", "/environ/ruby", "/environ/vim"
+- ~~Organize the scripts into categories instead of seperating them by function~~
+  - ~~Instead of "/load", "/completions", "/functions" do "/environ/git", "/environ/sublime", "/environ/ruby", "/environ/vim"~~
 - Add .symlink support
 - Change script/bootstrap to a bash script and include installation of fish
   - Make sure support for Red Hat, Ubuntu and OS X (for now)
