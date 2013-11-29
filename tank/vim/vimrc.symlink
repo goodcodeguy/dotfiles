@@ -1,0 +1,102 @@
+" Vim needs a POSIX-Compliant shell.
+set shell=/bin/bash
+
+syntax on
+
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/vundle
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+
+" My Bundles
+Bundle 'L9'
+Bundle 'chriskempson/base16-vim'
+Bundle 'plasticboy/vim-markdown'
+Bundle 'gh:vim-ruby/vim-ruby'
+Bundle 'tpope/vim-surround'
+Bundle 'vim-scripts/ZoomWin'
+Bundle 'mattn/webapi-vim'
+Bundle 'tpope/vim-rails'
+Bundle 'jnwhiteh/vim-golang'
+Bundle 'tpope/vim-dispatch'
+Bundle 'tpope/vim-fugitive'
+Bundle 'airblade/vim-gitgutter'
+Bundle 'godlygeek/tabular'
+Bundle 'scrooloose/nerdtree'
+Bundle 'mattn/gist-vim'
+Bundle 'epmatsw/ag.vim'
+Bundle 'tpope/vim-commentary'
+Bundle 'tejr/vim-tmux'
+Bundle 'ervandew/supertab'
+Bundle 'tpope/vim-rbenv'
+Bundle 'gem.vim'
+
+filetype plugin indent on
+
+" General White Space Settings
+set autoindent
+set smartindent
+set smarttab
+set tabstop=2
+set shiftwidth=2
+set expandtab
+set list listchars=tab:\ \ ,trail:·   " Display tabs and trailing spaces visually
+set wrap                              " Don't wrap lines
+set linebreak                         " Wrap lines at convenient points
+
+" Turn off Swap files
+set noswapfile
+set nobackup
+set nowritebackup
+
+" NERDTree
+" ========
+function! ShowFileInNERDTree()
+  if exists("t:NERDTreeBufName")
+    NERDTreeFind
+  else
+    NERDTree
+    wincmd l
+    NERDTreeFind
+  endif
+endfunction
+map <leader>f :call ShowFileInNERDTree()<cr>
+map <leader>n :NERDTreeToggle<cr>
+
+" Status line changes (pulled from @pengwyn)
+set laststatus=2
+set statusline=                                 " Override default
+set statusline+=%{fugitive#statusline()[4:-2]}  " Show fugitive git info
+set statusline+=\ %f\ %m\ %r                    " Show filename/path
+set statusline+=%=                              " Set right-side status info after this line
+set statusline+=%l/%L:%v                        " Set <line number>/<total lines>:<column>
+set statusline+=\                               " Set ending space
+
+" Visual recognition of leader press
+set showcmd
+
+set number " show line numbers of course
+highlight LineNr cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=Black guibg=#589A5D
+
+" Folds
+
+set foldmethod=indent   " Fold based on indent
+set foldnestmax=3       " Deepest fold is 3 levels
+set nofoldenable        " Don't fold by default
+
+let g:vim_markdown_folding_disabled=1
+
+
+" Scrolling
+" =========
+
+" Start scrolling when we're getting close to margins
+set scrolloff=10
+set sidescrolloff=15
+set sidescroll=1
+
+" Enable mouse use in all modes
+set mouse=a
