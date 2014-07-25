@@ -21,6 +21,11 @@ install_dotfiles() {
   link_files $DOTFILES_ROOT/templates/config.fish ~/.config/fish/config.fish
 }
 
+initialize_environment() {
+  # Handle line breaks correctly
+  git config --global core.autocrlf input
+}
+
 info 'Looking for Fish'
 
 # Check to see if fish is installed
