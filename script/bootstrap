@@ -19,13 +19,19 @@ link_files() {
 
 install_dotfiles() {
   link_files $DOTFILES_ROOT/templates/config.fish ~/.config/fish/config.fish
+
+  for df in $DOTFILES_ROOT/templates/.*; do
+    if [ -f $df ]; then
+      link_files $df ~/
+    fi
+  done
 }
 
 initialize_environment() {
   # Handle line breaks correctly
   git config --global core.autocrlf input
 
-  if [ ! -d "~/.config" || ! -d "~/.config/fish" ]
+  if [ ! -d "~/.config/fish" ] ; then
     mkdir -p ~/.config/fish
   fi
 }
