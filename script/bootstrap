@@ -25,12 +25,8 @@ initialize_environment() {
   # Handle line breaks correctly
   git config --global core.autocrlf input
 
-  if [ ! -d "~/.config" ]
-    mkdir ~/.config
-
-    if [ ! -d "~/.config/fish/" ]
-      mkdir ~/.config/fish
-    fi
+  if [ ! -d "~/.config" || ! -d "~/.config/fish" ]
+    mkdir -p ~/.config/fish
   fi
 }
 
