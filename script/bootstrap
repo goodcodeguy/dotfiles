@@ -64,5 +64,3 @@ initialize_environment
 install_dotfiles
 
 success 'Done. Get to work!'
-
-# ln -s $dotfiles_root/templates/config.fish $user_dir/.config/fish/config.fish
