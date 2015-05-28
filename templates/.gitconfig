@@ -1,0 +1,6 @@
+[color]
+	ui = true
+[push]
+	default = simple
+[core]
+	autocrlf = input
