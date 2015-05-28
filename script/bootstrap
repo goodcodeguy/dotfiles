@@ -24,6 +24,14 @@ install_dotfiles() {
 initialize_environment() {
   # Handle line breaks correctly
   git config --global core.autocrlf input
+
+  if [ ! -d "~/.config" ]
+    mkdir ~/.config
+
+    if [ ! -d "~/.config/fish/" ]
+      mkdir ~/.config/fish
+    fi
+  fi
 }
 
 info 'Looking for Fish'
@@ -50,6 +58,7 @@ fi
 
 info 'Installing Dotfiles'
 
+initialize_environment
 install_dotfiles
 
 success 'Done. Get to work!'
