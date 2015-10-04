@@ -1,2 +1,4 @@
 set -gx RBENV_ROOT /usr/local/var/rbenv
-. (rbenv init -|psub)
+set PATH $HOME/.rbenv/bin $PATH
+set PATH $HOME/.rbenv/shims $PATH
+rbenv rehash >/dev/null ^&1
