@@ -58,6 +58,28 @@ else
 
 fi
 
+if hash hub 2>/dev/null; then
+  success 'Hub Found...'
+else
+  info 'Installing Hub'
+
+  if [ "$(uname -s)" == "Darwin" ]
+  then
+    brew install hub
+  fi
+fi
+
+if hash rbenv 2>/dev/null; then
+  success 'Rbenv Found...'
+else
+  info 'Installing rbenv'
+
+  if [ "$(uname -s)" == "Darwin" ]
+  then
+    brew install rbenv
+  fi
+fi
+
 info 'Installing Dotfiles'
 
 initialize_environment
