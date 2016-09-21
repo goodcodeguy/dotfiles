@@ -76,7 +76,7 @@ else
 
   if [ "$(uname -s)" == "Darwin" ]
   then
-    brew install rbenv
+    brew install rbenv --HEAD
   fi
 fi
 
