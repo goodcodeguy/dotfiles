@@ -1,3 +1,3 @@
 function bu
-  brew update ;and brew upgrade --all
+  brew update ;and brew upgrade
 end
